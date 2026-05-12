@@ -8,7 +8,7 @@ function Catalogue() {
             <p>Aquí aparecerán las peticiones que hayan decidido publicar los usuarios.</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="cards-grid">
             {requests.map((req) => (
                 <RequestCard
                     key={req.id}

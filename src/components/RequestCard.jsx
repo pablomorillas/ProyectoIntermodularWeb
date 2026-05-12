@@ -2,28 +2,25 @@ function RequestCard({ imagen, titulo, descripcion }) {
     return (
         <article
             tabIndex="0"
-            className="flex flex-col items-start gap-3 p-4 rounded-lg bg-[linear-gradient(0deg,rgba(247,247,247,1)_0%,rgba(247,247,247,1)_100%)] shadow-md hover:shadow-lg transition-shadow duration-300"
+            className="card-simple"
             aria-label={titulo}
         >
-            <figure className="w-full aspect-square rounded-lg bg-gray-100 overflow-hidden">
+            <figure className="card-simple-img-container">
                 <img
                     src={imagen}
                     alt={`Imagen de ${titulo}`}
                     loading="lazy"
-                    className="w-full h-full object-cover"
+                    className="card-simple-img"
                 />
-                <figcaption className="sr-only">{descripcion}</figcaption>
             </figure>
 
-            <header>
-                <h2 className="text-lg font-semibold leading-snug text-gray-800">
-                    <strong>{titulo}</strong>
-                </h2>
-            </header>
+            <h2 className="card-simple-title">
+                {titulo}
+            </h2>
 
-            <p className="text-sm leading-relaxed text-gray-700">
-                {descripcion}
-            </p>
+            {/* Description is hidden in the visual design, but kept in DOM if needed or removed. 
+                For now I'll remove it from valid rendering to match the clean look 
+            */}
         </article>
     );
 }
